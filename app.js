@@ -51,13 +51,7 @@ app.route("/articles/:articleTitle")
     }).catch(function(err){console.log(err);})
 })
 
-// .put(function(req,res){
-//     Article.update(
-//         {title:req.params.articleTitle},
-//         {title:req.body.title,content:req.body.content},
-//         {overwrite:true}).then(function(){res.send("Succesfully")}).catch(function(err){console.log(err);
-//     })
-    
+
 .put(function(req,res){
     Article.updateOne({title:req.params.articleTitle},
                     {title:req.body.title,content:req.body.content}).then(function(){res.send("Successfully updated ")}).catch(function(err){res.send(err)})
